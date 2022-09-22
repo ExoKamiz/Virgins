@@ -8,7 +8,7 @@
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         position: relative;
-        color: #587493;
+        color: #3CA1D9;
         font-size: 2.5em;
         font-weight: normal;
         display: inline-block;
@@ -35,7 +35,7 @@
             height: 4px;
             right: 0;
             bottom: -4px;
-            background: #587493;
+            background: #3CA1D9;
         }
 
 @media (max-width: 580px) {
