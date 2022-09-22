@@ -1,0 +1,82 @@
+﻿.five {
+    background: #F7F4ED;
+    padding: 50px 20px 50px 170px;
+    text-align: center;
+}
+
+    .five h1 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        position: relative;
+        color: #587493;
+        font-size: 2.5em;
+        font-weight: normal;
+        display: inline-block;
+        margin: 0;
+        line-height: 1;
+        padding: 8px 20px 8px 2px;
+        border-top: 4px solid;
+    }
+
+        .five h1:before {
+            content: "Virgins";
+            position: absolute;
+            top: -10px;
+            left: -160px;
+            font-size: 1.5em;
+            transform: rotate(-25deg);
+            font-family: 'Marck Script', cursive;
+        }
+
+        .five h1:after {
+            content: "";
+            position: absolute;
+            width: 120%;
+            height: 4px;
+            right: 0;
+            bottom: -4px;
+            background: #587493;
+        }
+
+@media (max-width: 580px) {
+    .five {
+        padding-left: 130px;
+    }
+
+        .five h1 {
+            font-size: 2em;
+        }
+
+            .five h1:before {
+                left: -130px;
+            }
+}
+
+@media (max-width: 480px) {
+    .five {
+        padding-left: 100px;
+    }
+
+        .five h1 {
+            font-size: 1.5em;
+            padding-right: 10px;
+        }
+
+            .five h1:before {
+                left: -100px;
+            }
+}
+
+@media (max-width: 380px) {
+    .five {
+        padding-left: 90px;
+    }
+
+        .five h1 {
+            font-size: 1.3em;
+        }
+
+            .five h1:before {
+                left: -88px;
+            }
+}

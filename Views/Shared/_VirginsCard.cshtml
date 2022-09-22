@@ -1,0 +1,18 @@
+﻿@model Virgins.Models.Virgin
+
+    
+        <!-- Card-->
+        <div class="card bg-white rounded shadow-sm" style="width:30%">
+            <div class="card-body px-3 pt-3 pb-1 row">
+                <div class="col-7"><label class="float-left">@Model.UserName @Model.UserLastName</label></div>
+            </div>
+@*            <img class="card-img-top img-fluid d-block mx-auto mb-3" src="@WC.VirginImage@Model.Image" alt="Card image cap">
+*@            <div class="card-body p-1 px-3 row">
+                <div class="col-6">
+                    <span class="badge p-2 border w-100" style="background-color:lavenderblush">@Model.Description</span>
+                </div>
+                <div class="col-12 pt-2" style="font-size:13px; text-align:justify">
+                    <p> @Model.IsVirgin</p>
+                </div>
+            </div>
+        </div>

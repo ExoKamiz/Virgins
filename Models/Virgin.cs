@@ -15,5 +15,13 @@ namespace Virgins.Models
         [StringLength(50)]
         [Display(Name = "User Last Name")]
         public string UserLastName { get; set; }
+
+        public string Image { get; set; }
+
+        public string Description { get; set; }
+
+        public string IsVirgin { get; set; }
+
+
     }
 }

@@ -15,7 +15,7 @@ namespace Virgins.Controllers
         public IActionResult Index()
         {
             IEnumerable<Virgin> listOfVirgins = _db.Virgins;
-            return View();
+            return View(listOfVirgins);
         }
     }
 }
