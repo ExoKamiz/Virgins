@@ -30,11 +30,22 @@
 
                 <div class="form-group row">
                     <div class="col-4">
+                        <label asp-for="IsVirgin"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="IsVirgin" class="form-control" />
+                        <span asp-validation-for="IsVirgin" class="text-danger"></span>                 <!--в этом месте будут отображаться сообщения об ошибках для Name(валидация)-->
+                    </div>
+
+                </div
+
+                <div class="form-group row">
+                    <div class="col-4">
                         <label asp-for="Description"></label>
                     </div>
                     <div class="col-8">
                         @*textarea определяет многострочный элемент управления текстовым вводом. В конце добавили summernote для использования*@
-                        <textarea asp-for="Description" class="form-control summernote"></textarea>
+                        <textarea asp-for="Description" class="form-control"></textarea>
                         <span asp-validation-for="Description" class="text-danger"></span>
                     </div>
 
@@ -52,20 +63,43 @@
 
                 <div class="form-group row">
                     <div class="col-8 offset-4 row">
-                        <input type="submit" onclick="return validateInput()" class="btn btn-primary w-100" value="Create" />
-           
+
+                        <div class="col">
+                            <input type="submit" onclick="return validateInput()" class="btn btn-primary w-100" value="Create" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success w-100"><i class="fas fa-sign-out-alt"></i> Back</a>
+                        </div>
                     </div>
-                <div class="col">
-                            <a asp-action="Index" class="btn btn-success w-100"><i class="fas fa-sign-out-alt"></i> Back</a>    
-              </div>
+                </div>
             </div>
           </div>
-        </div>
 </form>
 
-@section Scripts{      
+@section Scripts{      <!--раздел для скриптов куда можно добвлять любой код js-->
 
     @{
         <partial name="_ValidationScriptsPartial" />
-    } 
+    }      <!--скрипт автоматически выполняет проверку данных на стороне клиента(без предачи данных на сервер)-->
+
+    <script>
+        $(document).ready(function () {         //добавляем скипт summernote
+            $('.summernote').summernote({       
+                heigh:250                       //добавиили настраиваемые свойства
+            });
+        });
+
+        function validateInput() {          //создаем JS функцию
+            if (document.getElementById("uploadBox").value == "") {  //uploadBox для загрузки файлов или фотографий на веб-страницу
+                Swal.fire(                                          //если файл не загружен, то нам выдает ошибку
+                    'Error!',
+                    'Please upload an Image!',
+                    'error'
+                )
+                return false;
+            }
+            return true;
+        }
+    </script>
+
 }
